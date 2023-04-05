@@ -84,7 +84,7 @@ nav .nav-item link:visited {
   align-items: center;
   width: 100%;
   height: 925px;
-  background: url("/img/desktop/header_background.jpg");
+  background: url("./../img/desktop/header_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
