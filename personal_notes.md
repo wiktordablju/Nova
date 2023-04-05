@@ -21,7 +21,7 @@
     1. Stworzyc strony biblioteka, sklep, rejestracja, logowanie, profil
     2. Angielskie wersje na te strony (Docelowo angielski ma byc domyslnym jezykiem)
     3. Responsywnosc na telefony, tablety
-    4. Wymyslec co mozna dodac JS
+    4. Wymyslec co mozna dodac JS (smooth scroll)
     5. Rozplanowanie backendu
     6. Baza danych
     7. Backend - Logowanie, rejestracja w PHP
