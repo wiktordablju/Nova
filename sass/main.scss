@@ -1,0 +1,167 @@
+// Importowanie innych plikow SASS
+@use "./reset"; //Resetowanie domyslnych styli HTML
+@use "./colors" as colors;
+
+body {
+	font-family: "Lato", sans-serif;
+	background-color: colors.$background;
+}
+// -----------------------------------------------------
+// Nawigacja
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	position: sticky;
+	width: 100%;
+	height: 50px;
+	background-color: colors.$element;
+	z-index: 1;
+	text-align: center;
+	font-size: 20px;
+	.nav-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 20%;
+		text-align: center;
+	}
+
+	a {
+		color: white;
+		transition: color 0.3s;
+	}
+
+	a:hover {
+		color: colors.$font;
+	}
+
+	a:visited {
+		color: white;
+	}
+}
+// Koniec nawigacji
+// -----------------------------------------------------
+
+// -----------------------------------------------------
+// Czesc glowna
+
+// -----------------------------------------------------
+// Header
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 925px;
+	background-color: #fff;
+	background: url("/img/desktop/header_background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	// Filter by przyciemnic zdjecie
+	.header-image {
+		position: absolute;
+		width: 100%;
+		height: 925px;
+		background-color: rgba(74, 55, 124, 0.3);
+	}
+	.header-name {
+		font-size: 24px;
+		color: white;
+		z-index: 1; //z-index zmieniony, by byl nad filtrem => nie jest przyciemniony
+	}
+}
+// Koniec headera
+// -----------------------------------------------------
+
+// -----------------------------------------------------
+// About us
+
+.about-us {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 500px;
+	margin-top: 5%;
+	font-size: 20px;
+	color: white;
+
+	h2 {
+		width: 100%;
+		text-align: center;
+	}
+
+	.about-us-items {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+		margin-top: 2.5%;
+
+		.about-us-item {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			width: 450px;
+			height: 400px;
+			img {
+				width: 100%;
+				height: 55%;
+			}
+			h3,
+			p {
+				padding: 10px;
+			}
+		}
+	}
+}
+
+// Koniec about us
+// -----------------------------------------------------
+
+// Koniec czesci glownej
+// -----------------------------------------------------
+
+// -----------------------------------------------------
+//Stopka
+footer {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	background-color: colors.$element;
+	z-index: 1;
+	text-align: center;
+	.footer-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 10%;
+		color: white;
+		font-size: 15px;
+		transition: color 0.3s;
+	}
+
+	a {
+		color: white;
+		transition: color 0.3s;
+	}
+	a:visited {
+		color: white;
+	}
+
+	a:hover {
+		color: colors.$font;
+	}
+}
+//Koniec stopki
+// -----------------------------------------------------
