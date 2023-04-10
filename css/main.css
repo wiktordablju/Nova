@@ -241,26 +241,28 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-  width: 50%;
-  font-size: 26px;
-  color: white;
+  justify-content: space-around;
+  height: 80%;
+  width: 40%;
+  background-color: rgba(39, 36, 38, 0.431372549);
+  border: solid black 0.5px;
+  border-radius: 5%;
 }
 .wrapper-settings .settings .setting {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 300px;
   height: 100px;
   background-color: #2e294e;
   border: 1px solid #efbcd5;
-  border-top-left-radius: 20%;
-  border-bottom-right-radius: 20%;
-}
-.wrapper-settings .settings .setting a {
+  border-radius: 10%;
   color: white;
+  font-size: 26px;
+  transition: 0.5s;
 }
-.wrapper-settings .settings .setting a:visited {
-  color: white;
+.wrapper-settings .settings .setting:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #efbcd5;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
