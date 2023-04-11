@@ -41,6 +41,74 @@ table {
   border-spacing: 0;
 }
 
+.wrapper-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 95%;
+  background-image: linear-gradient(200deg, #252629 0%, #4b5267 75%);
+}
+.wrapper-settings .settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 80%;
+  width: 40%;
+  background-color: rgba(39, 36, 38, 0.431372549);
+  border: solid black 0.5px;
+  border-radius: 5%;
+}
+.wrapper-settings .settings .setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  background-color: #2e294e;
+  border: 1px solid #efbcd5;
+  border-radius: 10%;
+  color: white;
+  font-size: 26px;
+  transition: 0.5s;
+}
+.wrapper-settings .settings .setting:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #efbcd5;
+  cursor: pointer;
+}
+
+.library-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  margin-top: 5%;
+  padding-bottom: 2.5%;
+}
+.library-display .game {
+  width: 410px;
+  height: 300px;
+  margin: 1px;
+  background-color: #2e294e;
+  border: solid 1px black;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+.library-display .game .game-header {
+  width: 100%;
+  height: 50%;
+  background-image: url("./../img/desktop/conv.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background-color: #4b5267;
@@ -58,7 +126,7 @@ nav {
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 50px;
+  height: 5%;
   background-color: #2e294e;
   z-index: 2;
   text-align: center;
@@ -81,37 +149,6 @@ nav .nav-item a:hover {
 }
 nav .nav-item link:visited {
   color: white;
-}
-
-footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  background-color: #2e294e;
-  z-index: 1;
-  text-align: center;
-}
-footer .footer-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 10%;
-  color: white;
-  font-size: 15px;
-  transition: color 0.3s;
-}
-footer a {
-  color: white;
-  transition: color 0.3s;
-}
-footer a:visited {
-  color: white;
-}
-footer a:hover {
-  color: #8661c1;
 }
 
 .header {
@@ -167,6 +204,7 @@ footer a:hover {
   text-align: center;
   width: 500px;
   height: 600px;
+  margin: 2.5%;
 }
 .about-us .about-us-items .about-us-item .img {
   width: 100%;
@@ -229,40 +267,33 @@ footer a:hover {
   text-shadow: 0px 0px 30px hotpink;
 }
 
-.wrapper-settings {
+footer {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 95%;
-  background-image: linear-gradient(200deg, #252629 0%, #4b5267 75%);
+  height: 50px;
+  background-color: #2e294e;
+  z-index: 1;
+  text-align: center;
 }
-.wrapper-settings .settings {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 80%;
-  width: 40%;
-  background-color: rgba(39, 36, 38, 0.431372549);
-  border: solid black 0.5px;
-  border-radius: 5%;
-}
-.wrapper-settings .settings .setting {
+footer .footer-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 100px;
-  background-color: #2e294e;
-  border: 1px solid #efbcd5;
-  border-radius: 10%;
+  height: 100%;
+  width: 10%;
   color: white;
-  font-size: 26px;
-  transition: 0.5s;
+  font-size: 15px;
+  transition: color 0.3s;
 }
-.wrapper-settings .settings .setting:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #efbcd5;
-  cursor: pointer;
+footer a {
+  color: white;
+  transition: color 0.3s;
+}
+footer a:visited {
+  color: white;
+}
+footer a:hover {
+  color: #8661c1;
 }/*# sourceMappingURL=main.css.map */
