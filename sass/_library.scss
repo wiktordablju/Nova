@@ -1,0 +1,32 @@
+@use "./colors" as colors;
+
+.library-display {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: start;
+	width: 100%;
+	margin-top: 5%;
+	padding-bottom: 2.5%;
+
+	.game {
+		width: 410px;
+		height: 300px;
+		margin: 1px;
+		background-color: colors.$element;
+		border: solid 1px black;
+		color: white;
+		font-size: 18px;
+		text-align: center;
+		.game-header {
+			width: 100%;
+			height: 50%;
+			background-image: url("./../img/desktop/conv.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			border-radius: 5%;
+		}
+	}
+}
