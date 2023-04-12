@@ -1,20 +1,24 @@
 // Import plikow z kolorami
 @use "./colors" as colors;
-
 // USTAWIENIA
 .wrapper-settings {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 95%;
-	background-image: linear-gradient(200deg, #252629 0%, #4b5267 75%);
+	height: 100vh;
+	// background-image: linear-gradient(200deg, #252629 0%, #4b5267 75%);
+	background-image: url("./../img/desktop/settings_background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 
 	.settings {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
+		min-width: 600px;
 		height: 80%;
 		width: 40%;
 		background-color: #2724266e;

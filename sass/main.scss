@@ -3,12 +3,20 @@
 @use "./colors" as colors;
 @use "./settings"; //Style strony Ustawienia
 @use "./library"; //Style strony Biblioteka
+@use "./shop"; //Style strony Sklep
+@use "./register";
+@use "./login";
+@use "./profile";
 
 body {
 	font-family: "Lato", sans-serif;
 	background-color: colors.$background;
 	// Usuniecie scrollbarow z firefoxa
 	scrollbar-width: none; /* Firefox */
+}
+
+a:-webkit-any-link {
+	color: white;
 }
 
 body::-webkit-scrollbar {
@@ -27,7 +35,7 @@ nav {
 	background-color: colors.$element;
 	z-index: 2; //z-index: 2, aby bylo wyzej niz napis NOVA na HI podczas scrollowania
 	text-align: center;
-	font-size: 20px;
+	font-size: 2rem;
 	.nav-item {
 		display: flex;
 		justify-content: center;
@@ -58,7 +66,7 @@ nav {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 925px;
+	height: 100vh;
 	background: url("./../img/desktop/header_background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -68,11 +76,11 @@ nav {
 	.header-image {
 		position: absolute;
 		width: 100%;
-		height: 925px;
+		height: 100vh;
 		background-color: rgba(74, 55, 124, 0.3);
 	}
 	.header-name {
-		font-size: 24px;
+		font-size: 2.4rem;
 		color: white;
 		z-index: 1; //z-index zmieniony, by byl nad filtrem => nie jest przyciemniony
 	}
@@ -85,14 +93,14 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	width: 100%;
-	height: 875px;
+	height: 90vh;
 	margin-top: 5%;
-	font-size: 20px;
+	font-size: 2rem;
 	color: white;
 
 	h2 {
 		width: 100%;
-		font-size: 35px;
+		font-size: 3.5rem;
 		text-align: center;
 	}
 
@@ -102,14 +110,15 @@ nav {
 		justify-content: space-evenly;
 		align-items: center;
 		width: 100%;
-		margin-top: 2.5%;
+		height: 60%;
+		padding-top: 2.5%;
 
 		.about-us-item {
 			display: flex;
 			flex-direction: column;
 			text-align: center;
-			width: 500px;
-			height: 600px;
+			width: 26%;
+			height: 100%;
 			margin: 2.5%;
 			.img {
 				width: 100%;
@@ -130,7 +139,7 @@ nav {
 
 			h3,
 			p {
-				padding: 10px;
+				padding: 1rem;
 			}
 		}
 	}
@@ -143,7 +152,7 @@ nav {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 810px;
+	height: 90vh;
 	color: white;
 	background-image: url("./../img/desktop/register.jpg");
 	background-size: cover;
@@ -153,12 +162,12 @@ nav {
 	.register-image {
 		position: absolute;
 		width: 100%;
-		height: 810px;
+		height: 90vh;
 		background-color: rgba(63, 35, 134, 0.404);
 		z-index: 0;
 	}
 	.register-name {
-		font-size: 30px;
+		font-size: 3rem;
 		z-index: 1;
 		color: white;
 		h2 {
@@ -184,7 +193,7 @@ footer {
 	justify-content: space-evenly;
 	align-items: center;
 	width: 100%;
-	height: 50px;
+	height: 5%;
 	background-color: colors.$element;
 	z-index: 1;
 	text-align: center;

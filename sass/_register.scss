@@ -1,0 +1,88 @@
+@use "./colors";
+.register-mainpage {
+	height: 95vh;
+	width: 100vw;
+	color: white;
+	overflow: hidden;
+	.register-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		height: 700px;
+		width: 50%;
+		margin: 0 auto;
+		margin-top: 5%;
+		background-color: #2724266e;
+		border: solid black 0.5px;
+		border-radius: 5%;
+		h2 {
+			padding: 5%;
+			text-align: center;
+			font-size: 3rem;
+		}
+		form {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			font-size: 2rem;
+			text-align: center;
+
+			.labels {
+				width: 50%;
+				height: 150px;
+				line-height: 30px;
+			}
+
+			.inputs {
+				width: 50%;
+				height: 150px;
+				line-height: 30px;
+			}
+
+			input,
+			label {
+				display: inline-block;
+				margin-top: 2%;
+			}
+			// Dzialanie na obieky z danymi klasami
+			[type*="text"],
+			[type*="password"] {
+				font-size: 2rem;
+			}
+
+			[type*="checkbox"] {
+				width: 30px;
+				height: 30px;
+			}
+
+			[type*="submit"] {
+				width: 130px;
+				height: 50px;
+				margin: 0 auto;
+				margin-top: 5%;
+				filter: brightness(75%);
+				font-size: 2rem;
+				transition: 0.3s;
+			}
+
+			[type*="submit"]:hover {
+				transform: scale(1.1);
+				filter: brightness(100%);
+				cursor: pointer;
+			}
+		}
+		p {
+			padding: 5%;
+			text-align: center;
+			font-size: 2rem;
+		}
+		a {
+			// text-shadow: 0 0 3px pink;
+			text-decoration: underline;
+			transition: 0.3s;
+		}
+		a:hover {
+			text-shadow: 0 0 10px pink;
+		}
+	}
+}

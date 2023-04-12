@@ -1,0 +1,90 @@
+@use "./colors";
+
+.shop-display {
+	height: 95%;
+	width: 100%;
+	margin-top: 5%;
+	padding-bottom: 2.5%;
+	h2 {
+		margin-bottom: 2.5%;
+		text-align: center;
+		color: white;
+		font-size: 3rem;
+	}
+	.games {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+		.game {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: start;
+			width: 800px;
+			height: 250px;
+			margin: 1px;
+			background-color: colors.$element;
+			border: solid 1px black;
+			color: white;
+			font-size: 18px;
+			text-align: center;
+			overflow: hidden;
+			margin: 0.5%;
+			transition: 0.3s;
+
+			.game-header {
+				width: 50%;
+				height: 100%;
+				background-image: url("./../img/desktop/conv.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				transition: 0.3s;
+			}
+			.game-text {
+				width: 50%;
+				height: 100%;
+				margin-top: 5%;
+				padding: 0.5%;
+				transition: 0.3s;
+			}
+			.add-btn {
+				z-index: 10;
+				position: absolute;
+				width: 0px;
+				height: 0px;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				top: 50%;
+				border-radius: 5%;
+				background-color: lime;
+				border: black solid 0.5px;
+				font-size: 2rem;
+				color: rgba(250, 235, 215, 0);
+				transition: 0.3s;
+				p {
+					margin-top: 25%;
+				}
+			}
+		}
+	}
+	// Klasy po najechaniu
+	.game:hover {
+		filter: brightness(100%); //Po najechaniu sie przyciemnia
+	}
+
+	.game:hover .game-header {
+		filter: brightness(40%);
+	}
+	.game:hover .game-text {
+		filter: brightness(40%);
+	}
+	.game:hover .add-btn {
+		width: 200px;
+		height: 150px;
+		color: white;
+	}
+}
