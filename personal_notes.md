@@ -2,11 +2,17 @@
 
 # TODO
 
-    1. Stworzyc strony biblioteka, sklep, rejestracja, ustawienia
-    3. Responsywnosc na telefony, tablety, sprawdzic wszystkie linki
-    4. Zmiana jezykow jsem
+    1. mixiny, remy
+    2. Responsywnosc na telefony, tablety, sprawdzic wszystkie linki
     ---
-    5. Rozplanowanie backendu
-    6. Baza danych
-    7. Backend - Logowanie, rejestracja w PHP, jesli zalogowany to w ustawieniach zamiast zaloguj to pokaz profil
-    8. Przygotowac demo, dokumentacje
+    1. Rozplanowanie backendu
+    2. Baza danych
+    3. Backend - Logowanie, rejestracja, jesli zalogowany to w ustawieniach zamiast zaloguj to pokaz profil, wyloguj, usun konto, profil
+    4. Sklep, biblioteka
+    ---
+    1. Przygotowac demo, dokumentacje
+
+
+    ---
+    1. ogarniecie kodu
+    2. Zmiana jezykow jsem

@@ -1,0 +1,35 @@
+.profile-mainpage {
+	height: 95vh;
+	width: 100vw;
+	margin-top: 5%;
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+	overflow: hidden;
+	.profile-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 30%;
+		height: 50%;
+		margin: 0 auto;
+		background-color: #2724266e;
+		border: solid black 0.5px;
+		border-radius: 5%;
+	}
+	button {
+		width: 130px;
+		height: 50px;
+		margin: 0 auto;
+		margin-top: 5%;
+		filter: brightness(75%);
+		font-size: 2rem;
+		transition: 0.3s;
+	}
+	button:hover {
+		transform: scale(1.1);
+		filter: brightness(100%);
+		cursor: pointer;
+	}
+}

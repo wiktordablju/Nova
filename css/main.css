@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -46,14 +47,18 @@ table {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 95%;
-  background-image: linear-gradient(200deg, #252629 0%, #4b5267 75%);
+  height: 100vh;
+  background-image: url("./../img/desktop/settings_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .wrapper-settings .settings {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  min-width: 600px;
   height: 80%;
   width: 40%;
   background-color: rgba(39, 36, 38, 0.431372549);
@@ -79,19 +84,27 @@ table {
   cursor: pointer;
 }
 
+.library-header {
+  margin-top: 5%;
+  text-align: center;
+  color: white;
+  font-size: 3.6rem;
+}
+
 .library-display {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: start;
+  align-items: normal;
+  height: 100vh;
   width: 100%;
-  margin-top: 5%;
-  padding-bottom: 2.5%;
+  margin-top: 1%;
+  padding-bottom: 25%;
 }
 .library-display .game {
-  width: 410px;
-  height: 300px;
+  width: 20%;
+  height: 60%;
   margin: 1px;
   background-color: #2e294e;
   border: solid 1px black;
@@ -106,13 +119,283 @@ table {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.shop-display {
+  height: 95%;
+  width: 100%;
+  margin-top: 5%;
+  padding-bottom: 2.5%;
+}
+.shop-display h2 {
+  margin-bottom: 2.5%;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+.shop-display .games {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.shop-display .games .game {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: start;
+  width: 800px;
+  height: 250px;
+  margin: 1px;
+  background-color: #2e294e;
+  border: solid 1px black;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  overflow: hidden;
+  margin: 0.5%;
+  transition: 0.3s;
+}
+.shop-display .games .game .game-header {
+  width: 50%;
+  height: 100%;
+  background-image: url("./../img/desktop/conv.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s;
+}
+.shop-display .games .game .game-text {
+  width: 50%;
+  height: 100%;
+  margin-top: 5%;
+  padding: 0.5%;
+  transition: 0.3s;
+}
+.shop-display .games .game .add-btn {
+  z-index: 10;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
   border-radius: 5%;
+  background-color: lime;
+  border: black solid 0.5px;
+  font-size: 2rem;
+  color: rgba(250, 235, 215, 0);
+  transition: 0.3s;
+}
+.shop-display .games .game .add-btn p {
+  margin-top: 25%;
+}
+.shop-display .game:hover {
+  filter: brightness(100%);
+}
+.shop-display .game:hover .game-header {
+  filter: brightness(40%);
+}
+.shop-display .game:hover .game-text {
+  filter: brightness(40%);
+}
+.shop-display .game:hover .add-btn {
+  width: 200px;
+  height: 150px;
+  color: white;
+}
+
+.register-mainpage {
+  height: 95vh;
+  width: 100vw;
+  color: white;
+  overflow: hidden;
+}
+.register-mainpage .register-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 700px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: rgba(39, 36, 38, 0.431372549);
+  border: solid black 0.5px;
+  border-radius: 5%;
+}
+.register-mainpage .register-content h2 {
+  padding: 5%;
+  text-align: center;
+  font-size: 3rem;
+}
+.register-mainpage .register-content form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+.register-mainpage .register-content form .labels {
+  width: 50%;
+  height: 150px;
+  line-height: 30px;
+}
+.register-mainpage .register-content form .inputs {
+  width: 50%;
+  height: 150px;
+  line-height: 30px;
+}
+.register-mainpage .register-content form input,
+.register-mainpage .register-content form label {
+  display: inline-block;
+  margin-top: 2%;
+}
+.register-mainpage .register-content form [type*=text],
+.register-mainpage .register-content form [type*=password] {
+  font-size: 2rem;
+}
+.register-mainpage .register-content form [type*=checkbox] {
+  width: 30px;
+  height: 30px;
+}
+.register-mainpage .register-content form [type*=submit] {
+  width: 130px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 5%;
+  filter: brightness(75%);
+  font-size: 2rem;
+  transition: 0.3s;
+}
+.register-mainpage .register-content form [type*=submit]:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
+  cursor: pointer;
+}
+.register-mainpage .register-content p {
+  padding: 5%;
+  text-align: center;
+  font-size: 2rem;
+}
+.register-mainpage .register-content a {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.register-mainpage .register-content a:hover {
+  text-shadow: 0 0 10px pink;
+}
+
+.login-mainpage {
+  height: 95vh;
+  width: 100vw;
+  color: white;
+  overflow: hidden;
+}
+.login-mainpage .login-content {
+  height: 700px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: rgba(39, 36, 38, 0.431372549);
+  border: solid black 0.5px;
+  border-radius: 5%;
+}
+.login-mainpage .login-content h2 {
+  padding: 5%;
+  text-align: center;
+  font-size: 3rem;
+}
+.login-mainpage .login-content form {
+  text-align: center;
+  font-size: 2rem;
+}
+.login-mainpage .login-content form input,
+.login-mainpage .login-content form label {
+  margin-top: 2%;
+}
+.login-mainpage .login-content form [type*=checkbox] {
+  width: 30px;
+  height: 30px;
+}
+.login-mainpage .login-content form [type*=submit] {
+  width: 130px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 5%;
+  filter: brightness(75%);
+  font-size: 2rem;
+  transition: 0.3s;
+}
+.login-mainpage .login-content form [type*=submit]:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
+  cursor: pointer;
+}
+.login-mainpage .login-content form [value*=USUŃ]:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
+  background-color: rgb(206, 18, 18);
+  cursor: pointer;
+}
+.login-mainpage .login-content p {
+  padding: 5%;
+  text-align: center;
+  font-size: 2rem;
+}
+.login-mainpage .login-content a {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.login-mainpage .login-content a:hover {
+  text-shadow: 0 0 10px pink;
+}
+
+.profile-mainpage {
+  height: 95vh;
+  width: 100vw;
+  margin-top: 5%;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  overflow: hidden;
+}
+.profile-mainpage .profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 50%;
+  margin: 0 auto;
+  background-color: rgba(39, 36, 38, 0.431372549);
+  border: solid black 0.5px;
+  border-radius: 5%;
+}
+.profile-mainpage button {
+  width: 130px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 5%;
+  filter: brightness(75%);
+  font-size: 2rem;
+  transition: 0.3s;
+}
+.profile-mainpage button:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
+  cursor: pointer;
 }
 
 body {
   font-family: "Lato", sans-serif;
   background-color: #4b5267;
   scrollbar-width: none; /* Firefox */
+}
+
+a:-webkit-any-link {
+  color: white;
 }
 
 body::-webkit-scrollbar {
@@ -130,7 +413,7 @@ nav {
   background-color: #2e294e;
   z-index: 2;
   text-align: center;
-  font-size: 20px;
+  font-size: 2rem;
 }
 nav .nav-item {
   display: flex;
@@ -156,7 +439,7 @@ nav .nav-item link:visited {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 925px;
+  height: 100vh;
   background: url("./../img/desktop/header_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -165,11 +448,11 @@ nav .nav-item link:visited {
 .header .header-image {
   position: absolute;
   width: 100%;
-  height: 925px;
+  height: 100vh;
   background-color: rgba(74, 55, 124, 0.3);
 }
 .header .header-name {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: white;
   z-index: 1;
 }
@@ -180,14 +463,14 @@ nav .nav-item link:visited {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 875px;
+  height: 90vh;
   margin-top: 5%;
-  font-size: 20px;
+  font-size: 2rem;
   color: white;
 }
 .about-us h2 {
   width: 100%;
-  font-size: 35px;
+  font-size: 3.5rem;
   text-align: center;
 }
 .about-us .about-us-items {
@@ -196,14 +479,15 @@ nav .nav-item link:visited {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  margin-top: 2.5%;
+  height: 60%;
+  padding-top: 2.5%;
 }
 .about-us .about-us-items .about-us-item {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 500px;
-  height: 600px;
+  width: 26%;
+  height: 100%;
   margin: 2.5%;
 }
 .about-us .about-us-items .about-us-item .img {
@@ -224,7 +508,7 @@ nav .nav-item link:visited {
 }
 .about-us .about-us-items .about-us-item h3,
 .about-us .about-us-items .about-us-item p {
-  padding: 10px;
+  padding: 1rem;
 }
 
 .register-now {
@@ -233,7 +517,7 @@ nav .nav-item link:visited {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 810px;
+  height: 90vh;
   color: white;
   background-image: url("./../img/desktop/register.jpg");
   background-size: cover;
@@ -243,12 +527,12 @@ nav .nav-item link:visited {
 .register-now .register-image {
   position: absolute;
   width: 100%;
-  height: 810px;
+  height: 90vh;
   background-color: rgba(63, 35, 134, 0.404);
   z-index: 0;
 }
 .register-now .register-name {
-  font-size: 30px;
+  font-size: 3rem;
   z-index: 1;
   color: white;
 }
@@ -272,7 +556,7 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 5%;
   background-color: #2e294e;
   z-index: 1;
   text-align: center;
