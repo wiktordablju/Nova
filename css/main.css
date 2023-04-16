@@ -70,7 +70,7 @@ table {
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 100px;
+  height: 150px;
   background-color: #2e294e;
   border: 1px solid #efbcd5;
   border-radius: 10%;
@@ -109,7 +109,7 @@ table {
   background-color: #2e294e;
   border: solid 1px black;
   color: white;
-  font-size: 18px;
+  font-size: 1.8rem;
   text-align: center;
 }
 .library-display .game .game-header {
@@ -294,7 +294,7 @@ table {
   overflow: hidden;
 }
 .login-mainpage .login-content {
-  height: 700px;
+  height: 75%;
   width: 50%;
   margin: 0 auto;
   margin-top: 5%;
