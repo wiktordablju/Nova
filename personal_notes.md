@@ -2,8 +2,6 @@
 
 # TODO
 
-    1. mixiny, remy
-    2. Responsywnosc na telefony, tablety, sprawdzic wszystkie linki
     ---
     1. Rozplanowanie backendu
     2. Baza danych
