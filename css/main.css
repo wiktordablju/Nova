@@ -387,6 +387,9 @@ table {
   filter: brightness(100%);
   cursor: pointer;
 }
+.profile-mainpage h2 {
+  text-transform: uppercase;
+}
 
 body {
   font-family: "Lato", sans-serif;
