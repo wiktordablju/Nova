@@ -146,7 +146,7 @@ table {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: start;
-  width: 800px;
+  width: 700px;
   height: 250px;
   margin: 1px;
   background-color: #2e294e;
@@ -161,11 +161,11 @@ table {
 .shop-display .games .game .game-header {
   width: 50%;
   height: 100%;
-  background-image: url("./../img/desktop/conv.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   transition: 0.3s;
+}
+.shop-display .games .game .game-header img {
+  height: 100%;
+  width: 100%;
 }
 .shop-display .games .game .game-text {
   width: 50%;
@@ -173,6 +173,9 @@ table {
   margin-top: 5%;
   padding: 0.5%;
   transition: 0.3s;
+}
+.shop-display .games .game .game-text h2 {
+  text-transform: uppercase;
 }
 .shop-display .games .game .add-btn {
   z-index: 10;
@@ -189,7 +192,8 @@ table {
   color: rgba(250, 235, 215, 0);
   transition: 0.3s;
 }
-.shop-display .games .game .add-btn p {
+.shop-display .games .game .add-btn p,
+.shop-display .games .game .add-btn h2 {
   margin-top: 25%;
 }
 .shop-display .game:hover {
@@ -224,11 +228,13 @@ table {
   background-color: rgba(39, 36, 38, 0.431372549);
   border: solid black 0.5px;
   border-radius: 5%;
+  color: transparent;
 }
 .register-mainpage .register-content h2 {
   padding: 5%;
   text-align: center;
   font-size: 3rem;
+  color: white;
 }
 .register-mainpage .register-content form {
   display: flex;
@@ -241,11 +247,13 @@ table {
   width: 50%;
   height: 150px;
   line-height: 30px;
+  color: white;
 }
 .register-mainpage .register-content form .inputs {
   width: 50%;
   height: 150px;
   line-height: 30px;
+  color: black;
 }
 .register-mainpage .register-content form input,
 .register-mainpage .register-content form label {
@@ -268,23 +276,28 @@ table {
   filter: brightness(75%);
   font-size: 2rem;
   transition: 0.3s;
+  color: black;
 }
 .register-mainpage .register-content form [type*=submit]:hover {
   transform: scale(1.1);
   filter: brightness(100%);
   cursor: pointer;
+  color: black;
 }
 .register-mainpage .register-content p {
   padding: 5%;
   text-align: center;
   font-size: 2rem;
+  color: white;
 }
 .register-mainpage .register-content a {
   text-decoration: underline;
   transition: 0.3s;
+  color: white;
 }
 .register-mainpage .register-content a:hover {
   text-shadow: 0 0 10px pink;
+  color: white;
 }
 
 .login-mainpage {
@@ -315,6 +328,10 @@ table {
 .login-mainpage .login-content form label {
   margin-top: 2%;
 }
+.login-mainpage .login-content form [type*=text],
+.login-mainpage .login-content form [type*=password] {
+  font-size: 2rem;
+}
 .login-mainpage .login-content form [type*=checkbox] {
   width: 30px;
   height: 30px;
@@ -339,7 +356,8 @@ table {
   background-color: rgb(206, 18, 18);
   cursor: pointer;
 }
-.login-mainpage .login-content p {
+.login-mainpage .login-content p,
+.login-mainpage .login-content strong {
   padding: 5%;
   text-align: center;
   font-size: 2rem;
@@ -389,6 +407,56 @@ table {
 }
 .profile-mainpage h2 {
   text-transform: uppercase;
+}
+
+.manage-mainpage {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 95vh;
+  width: 100vw;
+  margin-top: 5%;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  overflow: hidden;
+}
+.manage-mainpage .manage-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  height: 60%;
+  background-color: rgba(39, 36, 38, 0.431372549);
+  border: solid black 0.5px;
+  border-radius: 5%;
+  padding: 2%;
+  overflow: hidden;
+}
+.manage-mainpage .manage-info form textarea {
+  display: inline-block;
+  margin-top: 4%;
+  height: 25px;
+  width: 150px;
+}
+.manage-mainpage .manage-info form [type*=submit] {
+  width: 130px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 5%;
+  filter: brightness(75%);
+  font-size: 2rem;
+  transition: 0.3s;
+  color: black;
+}
+.manage-mainpage .manage-info form [type*=submit]:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
+  cursor: pointer;
+  color: black;
 }
 
 body {

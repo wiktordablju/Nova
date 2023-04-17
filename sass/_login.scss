@@ -24,6 +24,10 @@
 			label {
 				margin-top: 2%;
 			}
+			[type*="text"],
+			[type*="password"] {
+				font-size: 2rem;
+			}
 
 			[type*="checkbox"] {
 				width: 30px;
@@ -53,7 +57,8 @@
 				cursor: pointer;
 			}
 		}
-		p {
+		p,
+		strong {
 			padding: 5%;
 			text-align: center;
 			font-size: 2rem;

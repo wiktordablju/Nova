@@ -23,22 +23,35 @@
 	<!-- Koniec nawigacji -->
 
 	<!-- Mainpage -->
-	<div class="profile-mainpage">
-		<div class="profile-info">
+	<div class="shop-display">
+		<h2>Przeglądaj gry</h2>
+		<div class="games">
 			<?php
-			session_start();
-			echo '<h2>PROFIL UZYTKOWNIKA </h2>';
-			echo '<br />';
-			echo '<p>Login: ' . $_SESSION['login'] . '</p>';
-			echo '<p>Email: ' . $_SESSION['email']  . '</p>';
-			echo '<p>Posiadane gry:</p>';
-			echo '<button id="logout-btn">Wyloguj się</button>';
-			echo '<button id="manage-btn">Zarządzaj swoimi grami</button>'
+			require "./../php/db.php";
+			$query = "SELECT * FROM games";
+			$result = mysqli_query($pdo, $query);
+
+			while ($row = $result->fetch_array()) {
+				echo '<div class="game">';
+				echo '<button class="add-btn">DODAJ DO BIBLIOTEKI</button>';
+				echo '<div class="game-header">
+				<img src="./../img/games/' . $row['name'] . '.jpg" 
+				alt="' . $row['name'] . '">
+				</div>';
+				echo '<div class="game-text">
+						<h2>' . $row['name'] . '</h2>
+						<br>
+						<p>'
+					. $row['description'] .
+					'</p>
+					</div>';
+				echo '</div>';
+			}
 			?>
+
 		</div>
 	</div>
 	<!-- Mainpage -->
-	<script src="./../js/profile.js"></script>
 </body>
 
 </html>

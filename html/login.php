@@ -17,7 +17,7 @@
 	<nav>
 		<div class="nav-item"><a href="./../index.html">Strona główna</a></div>
 		<div class="nav-item"><a href="./library.html">Biblioteka</a></div>
-		<div class="nav-item"><a href="./shop.html">Sklep</a></div>
+		<div class="nav-item"><a href="./shop.php">Sklep</a></div>
 		<div class="nav-item"><a href="./settings.php">Ustawienia</a></div>
 	</nav>
 	<!-- Koniec nawigacji -->
@@ -50,17 +50,22 @@
 				$result = mysqli_query($pdo, $query);
 
 
+
 				$row = $result->fetch_array();
-				if ($row['login'] === $login && $row['password'] === $password) {
+
+				if ($row) { //W momencie w ktorym tutaj daje sie jakies wyrazenie typu if $row == x, to PHP wyrzuca blad o tym ze probujemy dzialac na nieistniejacych danych
 					session_start();
 					$_SESSION['logged'] = true;
 					$_SESSION['login'] = $login;
+
 					$_SESSION['email'] = $row['email'];
 					header('Location: profile.php');
 				} else {
-					echo "<p>Podane dane są nieprawidłowe</p>";
+
+					echo "<p><strong>Podane dane są nieprawidłowe</strong></p>";
 				}
 			}
+
 
 			?>
 		</div>

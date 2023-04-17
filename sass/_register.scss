@@ -15,10 +15,13 @@
 		background-color: #2724266e;
 		border: solid black 0.5px;
 		border-radius: 5%;
+		color: transparent;
+
 		h2 {
 			padding: 5%;
 			text-align: center;
 			font-size: 3rem;
+			color: white;
 		}
 		form {
 			display: flex;
@@ -31,12 +34,14 @@
 				width: 50%;
 				height: 150px;
 				line-height: 30px;
+				color: white;
 			}
 
 			.inputs {
 				width: 50%;
 				height: 150px;
 				line-height: 30px;
+				color: black;
 			}
 
 			input,
@@ -63,26 +68,31 @@
 				filter: brightness(75%);
 				font-size: 2rem;
 				transition: 0.3s;
+				color: black;
 			}
 
 			[type*="submit"]:hover {
 				transform: scale(1.1);
 				filter: brightness(100%);
 				cursor: pointer;
+				color: black;
 			}
 		}
 		p {
 			padding: 5%;
 			text-align: center;
 			font-size: 2rem;
+			color: white;
 		}
 		a {
 			// text-shadow: 0 0 3px pink;
 			text-decoration: underline;
 			transition: 0.3s;
+			color: white;
 		}
 		a:hover {
 			text-shadow: 0 0 10px pink;
+			color: white;
 		}
 	}
 }

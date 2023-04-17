@@ -3,10 +3,7 @@
 # TODO
 
     ---
-    1. Rozplanowanie backendu
-    2. Baza danych
-    3. Backend - Logowanie, rejestracja, jesli zalogowany to w ustawieniach zamiast zaloguj to pokaz profil, wyloguj, usun konto, profil
-    4. Sklep, biblioteka
+    4. Sklep, biblioteka, licznie gier na profilu profil - tworzenie gier
     ---
     1. Przygotowac demo, dokumentacje
 

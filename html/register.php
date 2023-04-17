@@ -17,7 +17,7 @@
 	<nav>
 		<div class="nav-item"><a href="./../index.html">Strona główna</a></div>
 		<div class="nav-item"><a href="./library.html">Biblioteka</a></div>
-		<div class="nav-item"><a href="./shop.html">Sklep</a></div>
+		<div class="nav-item"><a href="./shop.php">Sklep</a></div>
 		<div class="nav-item"><a href="./settings.php">Ustawienia</a></div>
 	</nav>
 	<!-- Koniec nawigacji -->
@@ -62,17 +62,21 @@
 				$password = $_POST['password'];
 				$repeatPassword = $_POST['repeatPassword'];
 				$email = $_POST['email'];
-
-				if ($password == $repeatPassword) {
-					$password = hash('sha256', $password);
-					$query = "INSERT INTO logins (login, password, email) VALUES ('$login', '$password', '$email')";
-					$pdo->query($query);
-					echo "Zarejestrowano";
-				} else {
-					echo 'Haslo nie jest poprawne';
+				if ($_POST['accept']) {
+					$accept = $_POST['accept'];
 				}
-			} else {
-				echo 'essa';
+				if ($accept) {
+					if ($password == $repeatPassword && $accept) {
+						$password = hash('sha256', $password);
+						$query = "INSERT INTO logins (login, password, email) VALUES ('$login', '$password', '$email')";
+						$pdo->query($query);
+						echo '<p>Zarejestrowano użytkownika ' . $login .  '</p>';
+					} else if ($password != $repeatPassword) {
+						echo '<p>Podane hasło nie jest poprawne</p>';
+					}
+				} else {
+					echo '<br><p>Nie zaakceptowałeś regulaminu</p>';
+				}
 			}
 			?>
 			<p>

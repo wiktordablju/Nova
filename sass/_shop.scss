@@ -23,7 +23,7 @@
 			flex-wrap: wrap;
 			flex-direction: column;
 			align-items: start;
-			width: 800px;
+			width: 700px;
 			height: 250px;
 			margin: 1px;
 			background-color: colors.$element;
@@ -38,11 +38,11 @@
 			.game-header {
 				width: 50%;
 				height: 100%;
-				background-image: url("./../img/desktop/conv.jpg");
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: center;
 				transition: 0.3s;
+				img {
+					height: 100%;
+					width: 100%;
+				}
 			}
 			.game-text {
 				width: 50%;
@@ -50,6 +50,9 @@
 				margin-top: 5%;
 				padding: 0.5%;
 				transition: 0.3s;
+				h2 {
+					text-transform: uppercase;
+				}
 			}
 			.add-btn {
 				z-index: 10;
@@ -65,7 +68,8 @@
 				font-size: 2rem;
 				color: rgba(250, 235, 215, 0);
 				transition: 0.3s;
-				p {
+				p,
+				h2 {
 					margin-top: 25%;
 				}
 			}

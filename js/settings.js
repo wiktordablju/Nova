@@ -18,7 +18,7 @@ function register() {
 }
 
 function deleteAcc() {
-	window.location.href = "./../html/delete_account.html"
+	window.location.href = "./../html/delete_account.php"
 }
 
 if (loginBtn) {
