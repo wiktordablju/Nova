@@ -1,9 +1,11 @@
 // Importowanie innych plikow SASS
 @use "./reset"; //Resetowanie domyslnych styli HTML
-@use "./colors" as colors;
-@use "./settings"; //Style strony Ustawienia
-@use "./library"; //Style strony Biblioteka
-@use "./shop"; //Style strony Sklep
+@use "./colors" as colors; //import zmiennych z kolorami
+
+// Importowanie reszty stylow potrzebnych do innych stron
+@use "./settings";
+@use "./library";
+@use "./shop";
 @use "./register";
 @use "./login";
 @use "./profile";
@@ -12,12 +14,11 @@
 body {
 	font-family: "Lato", sans-serif;
 	background-color: colors.$background;
-	// Usuniecie scrollbarow z firefoxa
-	scrollbar-width: none; /* Firefox */
+	scrollbar-width: none; // Usuniecie scrollbarow z firefoxa
 }
 
 a:-webkit-any-link {
-	color: white;
+	color: white; //usuniecie kazdych linkow
 }
 
 body::-webkit-scrollbar {
@@ -34,7 +35,7 @@ nav {
 	width: 100%;
 	height: 5%;
 	background-color: colors.$element;
-	z-index: 2; //z-index: 2, aby bylo wyzej niz napis NOVA na HI podczas scrollowania
+	z-index: 2; //zmiana polozenia Z na najwyzsze na calej stronie, aby podczas przewijania strony zawsze byl widoczny
 	text-align: center;
 	font-size: 2rem;
 	.nav-item {
@@ -73,7 +74,7 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center;
 
-	// Filter by przyciemnic zdjecie
+	// Div na szerokosc calego rodzica dzialajacy jako "filtr"
 	.header-image {
 		position: absolute;
 		width: 100%;
@@ -83,7 +84,7 @@ nav {
 	.header-name {
 		font-size: 2.4rem;
 		color: white;
-		z-index: 1; //z-index zmieniony, by byl nad filtrem => nie jest przyciemniony
+		z-index: 1; //z-index zmieniony, by byl nad filtrem i nie byl przyciemniony
 	}
 }
 
@@ -147,6 +148,8 @@ nav {
 }
 
 // Zarejestruj teraz
+
+// Taki sam sposob jak w obrazku wyzej
 .register-now {
 	display: flex;
 	flex-direction: column;

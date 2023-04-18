@@ -44,19 +44,23 @@
 			<?php
 			require "./../php/db.php";
 
+
 			if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['loginRepeat']) && isset($_POST['passwordRepeat'])) {
 				$login = $_POST['login'];
 				$password = $_POST['password'];
 				$loginRepeat = $_POST['loginRepeat'];
 				$passwordRepeat = $_POST['passwordRepeat'];
 
+				// Sprawdzenie czy zarowno hasla jak i loginy sa takie same
 				if ($password == $passwordRepeat && $login == $loginRepeat) {
+					// Zaszyfrowania hasla oraz sprawdzenie czy istnieja takie konta w bazie
 					$password = hash('sha256', $password);
 					$checkQuery = "SELECT login, password FROM logins WHERE login = '$login' AND password = '$password' ";
 
 					$result = mysqli_query($pdo, $checkQuery);
 					$row = $result->fetch_array();
 
+					// Jesli dane konto istnieje to zostaje usuniete z bazy
 					if ($row['login'] == $login && $row['password'] = $password) {
 						session_start();
 						session_destroy();

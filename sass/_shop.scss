@@ -75,9 +75,10 @@
 			}
 		}
 	}
-	// Klasy po najechaniu
+
+	// Klasy hover, po najechaniu na gre, ta sie przyciemnia a przycisk z jej dodaniem/usunieciem sie pojawia
 	.game:hover {
-		filter: brightness(100%); //Po najechaniu sie przyciemnia
+		filter: brightness(100%);
 	}
 
 	.game:hover .game-header {

@@ -1,3 +1,5 @@
+// Funkcje na przekierowywanie do odpwowiednich stron na profilu
+
 const logoutBtn = document.querySelector("#logout-btn")
 const manageBtn = document.querySelector("#manage-btn")
 

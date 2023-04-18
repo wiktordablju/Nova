@@ -40,16 +40,16 @@
 	?>
 	<div class="library-display">
 		<?php
-
-
+		// Przechwycenie danych wszystkich gier z bazy danych
 		$query = "SELECT games.* FROM games JOIN user_library ON games.id = user_library.game_id WHERE user_library.user_id = '$id'";
 		$result = mysqli_query($pdo, $query);
 
+		// Wyswietlenie kazdej gry w osobnym divie
 		while ($row = mysqli_fetch_assoc($result)) {
 			echo '<div class="game">';
 			echo '<form method="POST">';
 			echo '<input type="hidden" name="game-id" value="' . $row['id'] . '">';
-			echo '<button type="submit" name="remove-btn" class="remove-btn">USUN DO BIBLIOTEKI</button>';
+			echo '<button type="submit" name="remove-btn" class="remove-btn">USUN Z BIBLIOTEKI</button>';
 			echo '</form>';
 			echo '<div class="game-header">';
 			echo '<img src="./../img/games/' . $row['name'] . '.jpg" alt="' . $row['name'] . '">';
@@ -63,6 +63,7 @@
 			echo '</div>';
 		}
 
+		// W przypadku klikniecia przycisku (wyzej w kodzie) USUN Z BIBLIOTEKI, gra usuwa sie z biblioteki danego uzytkownika
 		if (isset($_POST['remove-btn'])) {
 			$game_id = $_POST['game-id'];
 			$remove_query = "DELETE FROM user_library WHERE user_id = '$id' AND game_id = '$game_id'";

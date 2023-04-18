@@ -28,9 +28,12 @@
 		<div class="games">
 			<?php
 			require "./../php/db.php";
+
 			$query = "SELECT * FROM games";
 			$result = mysqli_query($pdo, $query);
 
+
+			// Wyswietlenie wszystkich gier w osobnych divach, to samo co w library.php jest rowniez ten sam element tylko ze tym razem dodawania do swojej biblioteki (kod w osobnym pliku)
 			while ($row = $result->fetch_array()) {
 				echo '<div class="game">';
 				echo '<form method="post" action="./../php/add_to_library.php">';

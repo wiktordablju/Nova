@@ -53,22 +53,24 @@
                 $row = $result->fetch_array();
                 $id = $row['id'];
 
-                // Jakies dane do PHP ktorych potrzebuje dla pliku
+
                 $image_name = $_FILES['image']['name'];
+                // Dane ktorych PHP potrzebuje do pliku
                 $image_tmp_name = $_FILES['image']['tmp_name'];
                 $image_size = $_FILES['image']['size'];
                 $image_error = $_FILES['image']['error'];
 
-                // Zmienne ktore sprawdzaja czy format pliku jest zdjeciem oraz czy zgadza sie jego sciezka
+                // Zmienne ktore sa potrzebne do sprawdzenia czy format pliku jest zdjeciem oraz czy zgadza sie jego sciezka
                 $image_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
                 $allowed_exts = array('jpg', 'jpeg', 'png');
 
+                // Faktyczne sprawdzenie tego co wyzej
                 if (in_array($image_ext, $allowed_exts)) {
                     // Ustawienie zmiennej by przechowywala sciezke do zapisanie i nazwe pliku do przeniesienia, move uploaded file to funkcja do przenoszenia plikow
                     $image_dest = './../img/games/' . $image_name;
                     move_uploaded_file($image_tmp_name, $image_dest);
 
-
+                    // Po przeniesieniu zdjecia do folderu, przenosza sie dane o grze do bazy danych
                     $query = "INSERT INTO games (name, description, id_owner) VALUES ('$name', '$description', '$id')";
                     $pdo->query($query);
                     echo '<p>Przesłaliśmy twoją grę</p>';

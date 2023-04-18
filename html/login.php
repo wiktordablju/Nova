@@ -42,22 +42,21 @@
 
 			<?php
 			require './../php/db.php';
-			if (isset($_POST['login'])) {
+
+			// Sprawdzenie czy podany uzytkownik istnieje w bazie danych
+			if (isset($_POST['login']) && isset($_POST['password'])) {
 				$login = $_POST['login'];
 				$password = $_POST['password'];
 				$password = hash('sha256', $password);
 				$query = "SELECT login, password, email FROM logins WHERE login = 	'$login' AND password = '$password'";
 				$result = mysqli_query($pdo, $query);
-
-
-
 				$row = $result->fetch_array();
 
-				if ($row) { //W momencie w ktorym tutaj daje sie jakies wyrazenie typu if $row == x, to PHP wyrzuca blad o tym ze probujemy dzialac na nieistniejacych danych
+				// Jesli istnieje to aktywowanie sesji oraz wypelnienie zmiennych sesji jego danymi oraz przejscie do strony profilu
+				if ($row) {
 					session_start();
 					$_SESSION['logged'] = true;
 					$_SESSION['login'] = $login;
-
 					$_SESSION['email'] = $row['email'];
 					header('Location: profile.php');
 				} else {

@@ -57,7 +57,9 @@
 			</form>
 			<?php
 			require_once "./../php/db.php";
-			if (isset($_POST['login'])) {
+
+
+			if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']) ** isset($_POST['repeatPassword'])) {
 				$login = $_POST['login'];
 				$password = $_POST['password'];
 				$repeatPassword = $_POST['repeatPassword'];
@@ -65,7 +67,9 @@
 				if ($_POST['accept']) {
 					$accept = $_POST['accept'];
 				}
+
 				if ($accept) {
+					// Jesli zarowno obydwa hasla sie zgadzaja oraz uzytkownik zaakceptowal regulamin to dodawane sa do bazy informacje o uzytkowniku
 					if ($password == $repeatPassword && $accept) {
 						$password = hash('sha256', $password);
 						$query = "INSERT INTO logins (login, password, email) VALUES ('$login', '$password', '$email')";

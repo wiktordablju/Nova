@@ -27,6 +27,8 @@
 		<div class="settings">
 			<?php
 			session_start();
+
+			// Jesli uzytkownik jest zalogowany to zamiast "Zaloguj" pokazuje sie dostep do jego profilu
 			if (isset($_SESSION['logged'])) {
 				echo '<div class="setting" id="profile-btn">Profil</div>';
 			} else {

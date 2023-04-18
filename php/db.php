@@ -1,3 +1,5 @@
+<!-- Konfiguracja polaczenia z baza danych -->
+
 <?php
 $mysqlHost = 'localhost';
 $username = 'root';
