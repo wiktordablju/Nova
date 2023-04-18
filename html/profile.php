@@ -16,7 +16,7 @@
 	<!-- Nawigacja -->
 	<nav>
 		<div class="nav-item"><a href="./../index.html">Strona główna</a></div>
-		<div class="nav-item"><a href="./library.html">Biblioteka</a></div>
+		<div class="nav-item"><a href="./library.php">Biblioteka</a></div>
 		<div class="nav-item"><a href="./shop.php">Sklep</a></div>
 		<div class="nav-item"><a href="./settings.php">Ustawienia</a></div>
 	</nav>
@@ -26,12 +26,25 @@
 	<div class="profile-mainpage">
 		<div class="profile-info">
 			<?php
+			require "./../php/db.php";
 			session_start();
-			echo '<h2>PROFIL UZYTKOWNIKA </h2>';
+			$login = $_SESSION['login'];
+
+			$checkUser = "SELECT id FROM logins WHERE login = '$login'";
+			$result = mysqli_query($pdo, $checkUser);
+			$row = $result->fetch_array();
+			$id = $row['id'];
+
+			$countQuery = "SELECT COUNT(*) as gameCount FROM user_library WHERE user_id = '$id'";
+			$countResult = mysqli_query($pdo, $countQuery);
+			$countRow = $countResult->fetch_array();
+			$gameCount = $countRow['gameCount'];
+
+
 			echo '<br />';
 			echo '<p>Login: ' . $_SESSION['login'] . '</p>';
 			echo '<p>Email: ' . $_SESSION['email']  . '</p>';
-			echo '<p>Posiadane gry:</p>';
+			echo '<p>Posiadane gry: ' . $gameCount . '</p>';
 			echo '<button id="logout-btn">Wyloguj się</button>';
 			echo '<button id="manage-btn">Zarządzaj swoimi grami</button>'
 			?>
