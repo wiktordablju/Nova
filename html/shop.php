@@ -16,7 +16,7 @@
 	<!-- Nawigacja -->
 	<nav>
 		<div class="nav-item"><a href="./../index.html">Strona główna</a></div>
-		<div class="nav-item"><a href="./library.html">Biblioteka</a></div>
+		<div class="nav-item"><a href="./library.php">Biblioteka</a></div>
 		<div class="nav-item"><a href="./shop.php">Sklep</a></div>
 		<div class="nav-item"><a href="./settings.php">Ustawienia</a></div>
 	</nav>
@@ -31,20 +31,41 @@
 			$query = "SELECT * FROM games";
 			$result = mysqli_query($pdo, $query);
 
+			// while ($row = $result->fetch_array()) {
+			// 	echo '<div class="game">';
+			// 	echo '<button class="add-btn">DODAJ DO BIBLIOTEKI</button>';
+			// 	echo '<div class="game-header">
+			// 	<img src="./../img/games/' . $row['name'] . '.jpg" 
+			// 	alt="' . $row['name'] . '">
+			// 	</div>';
+			// 	echo '<div class="game-text">
+			// 			<h2>' . $row['name'] . '</h2>
+			// 			<br>
+			// 			<p>'
+			// 		. $row['description'] .
+			// 		'</p>
+			// 		</div>';
+			// 	echo '</div>';
+			// }
+			// 
+
 			while ($row = $result->fetch_array()) {
 				echo '<div class="game">';
-				echo '<button class="add-btn">DODAJ DO BIBLIOTEKI</button>';
+				echo '<form method="post" action="./../php/add_to_library.php">';
+				echo '<input type="hidden" name="game_id" value="' . $row['id'] . '">';
+				echo '<button type="submit" class="add-btn">DODAJ DO BIBLIOTEKI</button>';
+				echo '</form>';
 				echo '<div class="game-header">
-				<img src="./../img/games/' . $row['name'] . '.jpg" 
-				alt="' . $row['name'] . '">
-				</div>';
+			<img src="./../img/games/' . $row['name'] . '.jpg" 
+			alt="' . $row['name'] . '">
+			</div>';
 				echo '<div class="game-text">
-						<h2>' . $row['name'] . '</h2>
-						<br>
-						<p>'
+					<h2>' . $row['name'] . '</h2>
+					<br>
+					<p>'
 					. $row['description'] .
 					'</p>
-					</div>';
+				</div>';
 				echo '</div>';
 			}
 			?>

@@ -16,7 +16,7 @@
 	<!-- Nawigacja -->
 	<nav>
 		<div class="nav-item"><a href="./../index.html">Strona główna</a></div>
-		<div class="nav-item"><a href="./library.html">Biblioteka</a></div>
+		<div class="nav-item"><a href="./library.php">Biblioteka</a></div>
 		<div class="nav-item"><a href="./shop.php">Sklep</a></div>
 		<div class="nav-item"><a href="./settings.php">Ustawienia</a></div>
 	</nav>

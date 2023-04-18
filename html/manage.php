@@ -16,7 +16,7 @@
     <!-- Nawigacja -->
     <nav>
         <div class="nav-item"><a href="./../index.html">Strona główna</a></div>
-        <div class="nav-item"><a href="./library.html">Biblioteka</a></div>
+        <div class="nav-item"><a href="./library.php">Biblioteka</a></div>
         <div class="nav-item"><a href="./shop.php">Sklep</a></div>
         <div class="nav-item"><a href="./settings.php">Ustawienia</a></div>
     </nav>
@@ -26,27 +26,89 @@
     <div class="manage-mainpage">
         <div class="manage-info">
             <h2>Dodaj grę</h2>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <label for="">Nazwa: </label>
                 <input type="text" name="name">
                 <br>
                 <label for="">Opis: </label>
                 <textarea name="description"> </textarea>
+                <br>
+                <label for="file">Okładka (.jpg): </label>
+                <input type="file" id="image" name="image" accept="image/*">
                 <br>
                 <input type="submit" value="Prześlij gre">
             </form>
+            <?php
+            require "./../php/db.php";
+            session_start();
+
+            if (isset($_POST['name']) && isset($_POST['description']) && isset($_FILES['image'])) {
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $login = $_SESSION['login'];
+
+                // Sprawdzamy jaki uzytkownik dodaje gre, by dodac jego id do bazy danych
+                $checkUser = "SELECT id FROM logins WHERE login = '$login'";
+                $result = mysqli_query($pdo, $checkUser);
+                $row = $result->fetch_array();
+                $id = $row['id'];
+
+                // Jakies dane do PHP ktorych potrzebuje dla pliku
+                $image_name = $_FILES['image']['name'];
+                $image_tmp_name = $_FILES['image']['tmp_name'];
+                $image_size = $_FILES['image']['size'];
+                $image_error = $_FILES['image']['error'];
+
+                // Zmienne ktore sprawdzaja czy format pliku jest zdjeciem oraz czy zgadza sie jego sciezka
+                $image_ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+                $allowed_exts = array('jpg', 'jpeg', 'png');
+
+                if (in_array($image_ext, $allowed_exts)) {
+                    // Ustawienie zmiennej by przechowywala sciezke do zapisanie i nazwe pliku do przeniesienia, move uploaded file to funkcja do przenoszenia plikow
+                    $image_dest = './../img/games/' . $image_name;
+                    move_uploaded_file($image_tmp_name, $image_dest);
+
+
+                    $query = "INSERT INTO games (name, description, id_owner) VALUES ('$name', '$description', '$id')";
+                    $pdo->query($query);
+                    echo '<p>Przesłaliśmy twoją grę</p>';
+                } else {
+                    echo '<p>Nieprawidłowy format pliku</p>';
+                }
+            }
+
+            ?>
         </div>
+
         <div class="manage-info">
-            <h2>Usuń grę</h2>
-            <form action="" method="post">
-                <label for="">Nazwa: </label>
-                <input type="text" name="name">
-                <br>
-                <label for="">Opis: </label>
-                <textarea name="description"> </textarea>
-                <br>
-                <input type="submit" value="Usuń gre">
-            </form>
+            <h2>Usuń swoje gry</h2>
+            <?php
+
+            $login = $_SESSION['login'];
+            $checkUser = "SELECT id FROM logins WHERE login = '$login'";
+            $result = mysqli_query($pdo, $checkUser);
+            $row = $result->fetch_array();
+            $id = $row['id'];
+
+
+            $query = "SELECT games.id, name FROM games INNER JOIN logins ON games.id_owner = logins.id  WHERE logins.id ='$id'";
+            $result = mysqli_query($pdo, $query);
+
+            while ($row = $result->fetch_array()) {
+                // W tym momencie kazda gre posiadane przez dane konto wyswietla sie w osobnym divie ale musi tez byc w formie, na wypadek jesli uzytkownik chcialby ja usunac
+                // W momencie klikniecia usun przenosi sie do pliku delete_game.php
+                echo '<div class="delete-game">';
+                echo '<span>' . $row['name'] . '</span>';
+                echo '<form method="POST" action="./../php/delete_game.php">';
+                echo '<input type="hidden" name="game_id" value="' . $row['id'] . '">';
+                echo '<button type="submit">Usuń grę </button>';
+                echo '</form>';
+                echo '</div>';
+            }
+
+
+
+            ?>
         </div>
     </div>
     <!-- Mainpage -->
